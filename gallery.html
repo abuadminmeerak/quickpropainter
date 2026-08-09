@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Quick Pro Painters</title>
+    <meta name="description" content="Gallery of residential painting and pressure washing work from Quick Pro Painters." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+:root {
+  --bg: #f5f1eb;
+  --text: #161616;
+  --muted: #5c5c5c;
+  --panel: #ffffff;
+  --panel-dark: #201b18;
+  --border: rgba(22, 22, 22, 0.08);
+  --accent: #a96d42;
+  --accent-dark: #8f5932;
+  --container: 1180px;
+  --radius: 24px;
+  --shadow: 0 24px 60px rgba(20, 14, 10, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--container));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(245, 241, 235, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(22, 22, 22, 0.06);
+}
+
+.nav-wrap,
+.footer-wrap {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  align-items: center;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 10px;
+  display: none;
+  z-index: 40;
+}
+
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown:hover .nav-dropdown-menu {
+  display: grid;
+}
+
+.nav-dropdown-menu a {
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.nav-dropdown-menu a:hover {
+  background: #f5f1eb;
+}
+
+.nav a:hover,
+.nav-dropdown-toggle:hover,
+.text-link:hover {
+  color: var(--accent);
+}
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-media,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media img {
+  height: 100%;
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(16, 12, 10, 0.72) 0%, rgba(16, 12, 10, 0.52) 42%, rgba(16, 12, 10, 0.16) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 110px 0 88px;
+  color: #fff;
+}
+
+.eyebrow,
+.section-tag {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.section-tag {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  max-width: 11ch;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.98;
+  margin-bottom: 22px;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.04;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--muted);
+}
+
+.hero-text {
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1.08rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn-secondary,
+.btn-outline {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(22, 22, 22, 0.12);
+}
+
+.btn-outline:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section-dark {
+  background: #1f1916;
+  color: #fff;
+}
+
+.section-dark p,
+.section-dark .service-feature-content span {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.intro-grid,
+.wide-grid,
+.process-grid,
+.estimate-grid {
+  display: grid;
+  grid--columns: 1fr 1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.intro-photo-stack {
+  display: grid;
+  grid--columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.intro-photo-stack img,
+.image-panel img,
+.service-feature img,
+.gallery-grid img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.services-grid {
+  display: grid;
+  grid--columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 34px;
+}
+
+.service-feature {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.service-feature img {
+  height: 280px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.service-feature-content {
+  padding: 22px;
+}
+
+.service-feature-content span {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.image-band-section {
+  background: #ede6dd;
+}
+
+.tall-panel img {
+  min-height: 560px;
+}
+
+.image-copy {
+  max-width: 520px;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.gallery-grid {
+  margin-top: 34px;
+  display: grid;
+  grid--columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery-grid img {
+  aspect-ratio: 1 / 1;
+}
+
+.process-steps {
+  display: grid;
+  gap: 18px;
+}
+
+.process-steps article {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.process-steps span {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.estimate-section {
+  color: #fff;
+}
+
+.estimate-grid {
+  align-items: start;
+}
+
+.estimate-form {
+  display: grid;
+  grid--columns: 1fr 1fr;
+  gap: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+}
+
+label span {
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font: inherit;
+}
+
+input::our work,
+textarea::our work {
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.full-span {
+  grid-column: 1 / -1;
+}
+
+.site-footer {
+  background: #161210;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.service-hero {
+  padding: 110px 0 46px;
+  background: #1c1714;
+  color: #fff;
+}
+
+.service-hero-grid,
+.service-layout,
+.service-cta {
+  display: grid;
+  grid--columns: 1.05fr 0.95fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.service-hero-photo img,
+.service-photo img,
+.service-detail-card,
+.service-form-card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.service-hero-photo img,
+.service-photo img {
+  min-height: 520px;
+}
+
+.service-layout {
+  align-items: start;
+}
+
+.service-content-block,
+.service-detail-card,
+.service-form-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.service-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.service-list {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  display: grid;
+  gap: 8px;
+}
+
+.service-form-card {
+  position: sticky;
+  top: 100px;
+}
+
+.service-form-card h3 {
+  margin-bottom: 8px;
+}
+
+.service-form-card p {
+  margin-bottom: 18px;
+}
+
+.service-form {
+  display: grid;
+  gap: 14px;
+}
+
+.service-cta {
+  padding: 34px;
+  background: #ede6dd;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 1024px) {
+  .services-grid,
+  .gallery-grid,
+  .service-hero-grid,
+  .service-layout,
+  .service-cta {
+    grid--columns: 1fr;
+  }
+
+  .service-form-card {
+    position: static;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav {
+    display: none;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    min-width: 100%;
+    margin-top: 12px;
+  }
+
+  .intro-grid,
+  .wide-grid,
+  .process-grid,
+  .estimate-grid,
+  .intro-photo-stack,
+  .estimate-form {
+    grid--columns: 1fr;
+  }
+
+  .gallery-grid,
+  .services-grid {
+    grid--columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 120px 0 72px;
+  }
+
+  h1 {
+    max-width: 12ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .container {
+    width: min(calc(100% - 28px), var(--container));
+  }
+
+  .hero-actions,
+  .nav-wrap,
+  .footer-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn,
+  .btn-outline,
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">Quick Pro Painters</a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Services</button>
+            <div class="nav-dropdown-menu">
+              <a href="service-interior.html">Interior Painting</a>
+              <a href="service-exterior.html">Exterior Painting</a>
+              <a href="service-power-washing.html">Pressure Washing</a>
+            </div>
+          </div>
+          <a href="gallery.html">Gallery</a>
+          <a href="index.html#estimate">Free Estimate</a>
+        </nav>
+        <a class="btn btn-outline" href="index.html#estimate">Get Free Estimate</a>
+      </div>
+    </header>
+    <main>
+      <section class="service-hero">
+        <div class="container service-hero-grid">
+          <div>
+            <div class="eyebrow">Our Work</div>
+            <h1>Our work.</h1>
+            <p class="hero-text">Take a look at interior painting, exterior painting, and pressure washing projects for homes like yours.</p>
+          </div>
+          <div class="service-hero-photo">
+            <img src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/d86943a7-b9fe-4c3f-be99-53a87c619a80-professional-wide-exterior-residential-home.png" alt="Residential exterior painting project" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="gallery-grid gallery-page-grid">
+            <img src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/27f45121-5358-42ea-a6db-22c89b069e93-premium-local-residential-gallery-interior.png" alt="Interior painting project" />
+            <img src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/f6cec403-9e26-484a-aa40-86d2c6dc7ea8-premium-local-residential-gallery-exterior.png" alt="Exterior painting project" />
+            <img src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/5315f636-0397-4538-bd32-344f1d859d06-premium-local-residential-gallery-power.png" alt="Power washing project" />
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Kitchen painting project" />
+            <img src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/d86943a7-b9fe-4c3f-be99-53a87c619a80-professional-wide-exterior-residential-home.png" alt="Residential home exterior project" />
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Living room painting project" />
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Bedroom painting project" />
+            <img src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1200&q=80" alt="Exterior home painting project" />
+            <img src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/62a1011d-1dff-4663-ae58-d008d4a78410-polished-professional-residential-interior-paint.png" alt="Interior home painting project" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© Quick Pro Painters</p>
+        <p>Interior painting, exterior painting, and residential pressure washing.</p>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll('.nav-dropdown-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('.nav-dropdown').forEach(function (drop) {
+          if (!drop.contains(e.target)) {
+            drop.classList.remove('open');
+            var btn = drop.querySelector('.nav-dropdown-toggle');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

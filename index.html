@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Pro Painters | Interior, Exterior & Pressure Washing</title>
+    <meta
+      name="description"
+      content="Quick Pro Painters offers residential interior painting, exterior painting, and pressure washing with a simple free estimate form for homeowners."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+:root {
+  --bg: #f8f6f1;
+  --text: #13263c;
+  --muted: #4f6175;
+  --panel: #ffffff;
+  --panel-dark: #17324a;
+  --border: rgba(22, 22, 22, 0.08);
+  --accent: #d28a1f;
+  --accent-dark: #b97312;
+  --container: 1320px;
+  --radius: 24px;
+  --shadow: 0 24px 60px rgba(19, 38, 60, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--container));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(248, 246, 241, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(22, 22, 22, 0.06);
+}
+
+.nav-wrap,
+.footer-wrap {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.brand-logo {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  align-items: center;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 10px;
+  display: none;
+  z-index: 40;
+}
+
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown:hover .nav-dropdown-menu {
+  display: grid;
+}
+
+.nav-dropdown-menu a {
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.nav-dropdown-menu a:hover {
+  background: #f8f6f1;
+}
+
+.nav a:hover,
+.nav-dropdown-toggle:hover,
+.text-link:hover {
+  color: var(--accent);
+}
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-media,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media img {
+  height: 100%;
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(19, 38, 60, 0.52) 0%, rgba(19, 38, 60, 0.28) 42%, rgba(19, 38, 60, 0.08) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 128px 0 88px;
+  color: #fff;
+}
+
+.eyebrow,
+.section-tag {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.section-tag {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  max-width: 8ch;
+  font-size: clamp(3.2rem, 7.4vw, 6.4rem);
+  line-height: 0.96;
+  margin-bottom: 22px;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.04;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--muted);
+}
+
+.hero-text {
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1.08rem;
+}
+
+.hero .btn-primary {
+  min-width: 220px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.hero-actions-minimal {
+  margin-top: 0;
+  max-width: 260px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn-secondary,
+.btn-outline {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(22, 22, 22, 0.12);
+}
+
+.btn-outline:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section-dark {
+  background: #17324a;
+  color: #fff;
+}
+
+.section-dark p,
+.section-dark .service-feature-content span {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.intro-grid,
+.wide-grid,
+.process-grid,
+.estimate-grid {
+  display: grid;
+  grid--columns: 1fr 1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.intro-photo-stack {
+  display: grid;
+  grid--columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.intro-photo-stack img,
+.image-panel img,
+.service-feature img,
+.gallery-grid img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+ .services-grid {
+  display: grid;
+  grid--columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 34px;
+}
+
+.service-feature {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.service-feature img {
+  height: 460px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+ .service-feature-content {
+  padding: 22px;
+}
+
+.service-feature-content span {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.image-band-section {
+  background: #ede6dd;
+}
+
+.tall-panel img {
+  min-height: 560px;
+}
+
+.image-copy {
+  max-width: 520px;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.gallery-grid {
+  margin-top: 34px;
+  display: grid;
+  grid--columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery-grid img {
+  aspect-ratio: 1 / 1;
+}
+
+.process-steps {
+  display: grid;
+  gap: 18px;
+}
+
+.process-steps article {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.process-steps span {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+ .estimate-section {
+  color: #fff;
+}
+
+.estimate-grid {
+  align-items: start;
+}
+
+.estimate-form {
+  display: grid;
+  grid--columns: 1fr 1fr;
+  gap: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+}
+
+label span {
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font: inherit;
+}
+
+input::our work,
+textarea::our work {
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.full-span {
+  grid-column: 1 / -1;
+}
+
+.site-footer {
+  background: #161210;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.service-hero {
+  padding: 110px 0 46px;
+  background: #1c1714;
+  color: #fff;
+}
+
+.service-hero-grid,
+.service-layout,
+.service-cta {
+  display: grid;
+  grid--columns: 1.05fr 0.95fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.service-hero-photo img,
+.service-photo img,
+.service-detail-card,
+.service-form-card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.service-hero-photo img,
+.service-photo img {
+  min-height: 520px;
+}
+
+.service-layout {
+  align-items: start;
+}
+
+.service-content-block,
+.service-detail-card,
+.service-form-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.service-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.service-list {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  display: grid;
+  gap: 8px;
+}
+
+.service-form-card {
+  position: sticky;
+  top: 100px;
+}
+
+.service-form-card h3 {
+  margin-bottom: 8px;
+}
+
+.service-form-card p {
+  margin-bottom: 18px;
+}
+
+.service-form {
+  display: grid;
+  gap: 14px;
+}
+
+.service-cta {
+  padding: 34px;
+  background: #ede6dd;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 1024px) {
+  .services-grid,
+  .gallery-grid,
+  .service-hero-grid,
+  .service-layout,
+  .service-cta {
+    grid--columns: 1fr;
+  }
+
+  .service-form-card {
+    position: static;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav {
+    display: none;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    min-width: 100%;
+    margin-top: 12px;
+  }
+
+  .intro-grid,
+  .wide-grid,
+  .process-grid,
+  .estimate-grid,
+  .intro-photo-stack,
+  .estimate-form {
+    grid--columns: 1fr;
+  }
+
+  .gallery-grid,
+   .services-grid {
+    grid--columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 120px 0 72px;
+  }
+
+  h1 {
+    max-width: 12ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .container {
+    width: min(calc(100% - 28px), var(--container));
+  }
+
+  .hero-actions,
+  .nav-wrap,
+  .footer-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn,
+  .btn-outline,
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+
+.intro-grid { align-items: end; }
+.intro-grid > div:first-child { max-width: 520px; }
+.service-feature-content { padding: 22px 0 0; }
+.service-feature-content h3 { font-size: 1.45rem; margin-bottom: 0; color: #fff; }
+.service-feature-content p, .service-feature-content span { display:none; }
+.services-grid { gap: 28px; }
+.service-feature img { aspect-ratio: 1 / 1.08; border-radius: 22px; }
+.image-band-section .wide-grid { grid-template-columns: 1.15fr 0.85fr; align-items: center; }
+.image-copy { max-width: 430px; }
+.estimate-section { background: #f2eee6; }
+.estimate-grid { align-items: start; }
+.estimate-form { background: #fff; border: 1px solid rgba(19,38,60,0.10); box-shadow: 0 18px 40px rgba(19,38,60,0.08); }
+.estimate-form input, .estimate-form select, .estimate-form textarea { background: #fff; border: 1px solid rgba(19,38,60,0.14); }
+@media (max-width: 640px) { .brand-logo { width: 140px; } }
+
+
+.lower-layout { display:grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 0.42fr); gap: 42px; align-items:start; }
+.main-column { display:grid; gap: 54px; }
+.sidebar-column { display:grid; gap: 20px; position: sticky; top: 108px; }
+.info-block { background: transparent; }
+.intro-block, .work-block, .faq-block { padding: 0; }
+.intro-photo-large { margin-top: 28px; }
+.intro-photo-large img { min-height: 340px; }
+.services-block { background: #17324a; color:#fff; border-radius: 34px; padding: 40px; width: 100%; margin: 0; overflow: hidden; }
+.services-block .section-tag, .services-block h2 { color:#fff; }
+.single-service-feature { display:block; margin-top: 26px; }
+.sidebar-box { background:#fff; border:1px solid rgba(19,38,60,0.10); border-radius:24px; padding:26px; box-shadow: 0 18px 40px rgba(19,38,60,0.08); }
+.compact-form { display:grid; gap: 14px; }
+.compact-form label { display:grid; gap:8px; font-size:0.92rem; color: var(--text); }
+.compact-form input, .compact-form select { min-height: 48px; border-radius: 14px; border:1px solid rgba(19,38,60,0.14); padding: 0 14px; font: inherit; }
+.sidebar-box h3 { margin-bottom: 8px; font-size: 1.45rem; color: var(--text); }
+.book-box p { margin-bottom: 18px; }
+.sidebar-book-btn { width:100%; }
+.gallery-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+.gallery-grid img { aspect-ratio: 1 / 0.78; border-radius: var(--radius); box-shadow: var(--shadow); }
+.faq-list { display:grid; gap: 14px; margin-top: 26px; }
+.faq-list details { background:#fff; border:1px solid rgba(19,38,60,0.10); border-radius:18px; padding: 18px 20px; box-shadow: 0 10px 24px rgba(19,38,60,0.05); }
+.faq-list summary { cursor:pointer; list-style:none; font-weight:700; color: var(--text); }
+.faq-list summary::-webkit-details-marker { display:none; }
+.faq-list p { margin-top: 10px; }
+.final-cta-band { background:#17324a; color:#fff; }
+.final-cta-band .section-tag, .final-cta-band h2, .final-cta-band p { color:#fff; }
+.final-cta-wrap { display:flex; align-items:center; justify-content:space-between; gap: 30px; }
+.final-cta-wrap p { color: rgba(255,255,255,0.78); max-width: 560px; }
+.final-cta-actions { display:flex; gap:14px; flex-wrap:wrap; }
+.final-outline { color:#fff; border-color: rgba(255,255,255,0.24); }
+.footer-deep { background:#10283d; color:#fff; }
+.footer-grid { display:grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 28px; padding: 56px 0; }
+.footer-grid h4 { margin:0 0 14px; font-size: 1rem; }
+.footer-grid a, .footer-grid p { display:block; color: rgba(255,255,255,0.78); margin: 0 0 10px; }
+.footer-brand-block { display:inline-flex; align-items:center; justify-content:center; background:#f8f6f1; padding:16px 18px; border-radius:20px; }
+.footer-logo { width: 270px; max-width: 100%; height:auto; object-fit: contain; }
+.footer-bottom-bar { border-top:1px solid rgba(255,255,255,0.10); }
+.footer-bottom-wrap { padding: 18px 0; color: rgba(255,255,255,0.68); }
+@media (max-width: 1024px) { .lower-layout { grid-template-columns: 1fr; } .sidebar-column { position: static; grid-template-columns: 1fr; } .final-cta-wrap { flex-direction: column; align-items:flex-start; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .gallery-grid, .intro-photo-stack { grid-template-columns: 1fr; } .services-block { padding: 24px; } .footer-grid { grid-template-columns: 1fr; } .brand-logo { width: 170px; } }
+
+</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html"><img class="brand-logo" src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/13fc2c74-97d4-4a7e-880e-097394ef5674-ChatGPT_Image_Aug_8__2026__03_35_34_PM.png" alt="Quick Pro Painters logo" /></a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Services</button>
+            <div class="nav-dropdown-menu">
+              <a href="service-interior.html">Interior Painting</a>
+              <a href="service-exterior.html">Exterior Painting</a>
+              <a href="service-power-washing.html">Power Washing</a>
+            </div>
+          </div>
+          <a href="gallery.html">Gallery</a>
+          <a href="#estimate">Free Estimate</a>
+        </nav>
+        <a class="btn btn-outline" href="#estimate">Get Free Estimate</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-media">
+          <img
+            src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/9bd46d9f-e500-4fba-bd44-f74cae732d28-premium-local-residential-painting-contractor.png"
+            alt="Beautiful residential home exterior with strong curb appeal"
+          />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+              
+          <div class="hero-actions hero-actions-minimal">
+            <a class="btn btn-primary" href="#estimate">Get a Free Estimate</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-section">
+        <div class="container lower-layout">
+          <div class="main-column">
+            <section class="info-block intro-block">
+              <div class="section-tag">Residential Painting</div>
+              <h2>Interior. Exterior. Pressure Washing.</h2>
+              <div class="intro-photo-stack intro-photo-large">
+                <img
+                  src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/62a1011d-1dff-4663-ae58-d008d4a78410-polished-professional-residential-interior-paint.png"
+                  alt="Freshly painted residential interior"
+                />
+                <img
+                  src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/d86943a7-b9fe-4c3f-be99-53a87c619a80-professional-wide-exterior-residential-home.png"
+                  alt="Freshly painted residential home exterior"
+                />
+              </div>
+            </section>
+
+            <section class="info-block services-block" id="services">
+              <div class="section-tag">Services</div>
+              <h2>Services</h2>
+              <a class="service-feature single-service-feature" href="service-power-washing.html">
+                <img
+                  src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/88f0ae3c-f7af-4827-a4ae-4524fef50660-polished-professional-residential-power-washing.png"
+                  alt="Residential pressure washing on siding and driveway"
+                />
+                <div class="service-feature-content"><h3>Pressure Washing</h3></div>
+              </a>
+            </section>
+
+            <section class="info-block work-block">
+              <div class="section-tag">Our Work</div>
+              <h2>Recent Work</h2><p class="work-intro">A closer look at the kind of residential painting homeowners want to feel proud of.</p>
+              <div class="gallery-grid">
+                <img src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/27f45121-5358-42ea-a6db-22c89b069e93-premium-local-residential-gallery-interior.png" alt="Fresh residential interior paint project" />
+                <img src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/d86943a7-b9fe-4c3f-be99-53a87c619a80-professional-wide-exterior-residential-home.png" alt="Exterior residential painting project" />
+              </div>
+            </section>
+
+            <section class="info-block faq-block">
+              <div class="section-tag">Common Questions</div>
+              <h2>Common Questions</h2>
+              <div class="faq-list">
+                <details><summary>How much does it cost to paint a house?</summary><p>Pricing depends on the size of the home, surface condition, and the scope of work. The fastest way to get accurate pricing is to request a painting estimate for your specific project.</p></details>
+                <details><summary>How long does interior painting take?</summary><p>It depends on how many rooms are being painted and how much prep is needed. Small projects can move quickly, while larger interior jobs may take several days.</p></details>
+                <details><summary>Do I need to move furniture before painting?</summary><p>Clearing smaller items and valuables ahead of time helps the project move more smoothly. Larger furniture is usually easiest to discuss during the estimate.</p></details>
+                <details><summary>How often should a Texas home exterior be painted?</summary><p>That depends on sun exposure, weather, and the condition of the current finish. A fresh estimate is the best way to evaluate whether the exterior needs attention now.</p></details>
+                <details><summary>Do you pressure wash before exterior painting?</summary><p>Exterior surfaces often need to be cleaned before prep and paint begin. The right approach depends on the surface and the condition of the home.</p></details>
+                <details><summary>How do I get a painting estimate?</summary><p>Use the estimate form, choose the service you need, and send your contact details. That makes it easy to review the project and follow up with the next step.</p></details>
+              </div>
+            </section>
+          </div>
+
+          <aside class="sidebar-column">
+            <div class="sidebar-box estimate-box" id="estimate">
+              <div class="section-tag">Free Estimate</div>
+              <h3>Get a Free Estimate</h3>
+              <form class="compact-form" id="estimate-form" method="POST" novalidate>
+                <label><span>Name</span><input type="text" name="name" placeholder="Your name" required /></label>
+                <label><span>Phone</span><input type="tel" name="phone" placeholder="(555) 555-5555" required /></label>
+                <label><span>Email</span><input type="email" name="email" placeholder="you@example.com" /></label>
+                <label><span>Service</span><select name="service" required><option value="Interior Painting">Interior Painting</option><option value="Exterior Painting">Exterior Painting</option><option value="Pressure Washing">Pressure Washing</option></select></label>
+                <div class="form-message" id="estimate-form-message" aria-live="polite" style="display:none;margin-top:10px;font-size:14px;"></div>
+                <button class="btn btn-primary" type="submit">Get Free Estimate</button>
+              </form>
+            </div>
+
+            <div class="sidebar-box book-box">
+              <div class="section-tag">Book Now</div>
+              <h3>Ready to Schedule?</h3>
+              <p>Choose a time that works for you.</p>
+              <a class="btn btn-outline sidebar-book-btn" href="#">Book Now</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section final-cta-band">
+        <div class="container final-cta-wrap">
+          <div>
+            <div class="section-tag">Free Estimate</div>
+            <h2>Ready to Get Started?</h2>
+            <p>Tell us about your painting project and get your free estimate.</p>
+          </div>
+          <div class="final-cta-actions">
+            <a class="btn btn-primary" href="#estimate">Get a Free Estimate</a>
+            <a class="btn btn-outline final-outline" href="#">Book Now</a>
+          </div>
+        </div>
+      </section>
+<footer class="site-footer footer-deep">
+      <div class="container footer-grid">
+        <div class="footer-brand-block">
+          <img class="footer-logo" src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/13fc2c74-97d4-4a7e-880e-097394ef5674-ChatGPT_Image_Aug_8__2026__03_35_34_PM.png" alt="Quick Pro Painters logo" />
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="service-interior.html">Interior Painting</a>
+          <a href="service-exterior.html">Exterior Painting</a>
+          <a href="service-power-washing.html">Pressure Washing</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>Phone: 512-792-8287</p>
+          
+          <p>Service Area: Austin &amp; Surrounding Areas</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="#services">Services</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#estimate">Free Estimate</a>
+          <a href="#">Book Now</a>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div class="container footer-bottom-wrap">© 2026 Quick Pro Painters | Privacy Policy</div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll('.nav-dropdown-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('.nav-dropdown').forEach(function (drop) {
+          if (!drop.contains(e.target)) {
+            drop.classList.remove('open');
+            var btn = drop.querySelector('.nav-dropdown-toggle');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    </script>
+  <script>
+(function(){
+  const form = document.getElementById('estimate-form');
+  if (!form) return;
+  const message = document.getElementById('estimate-form-message');
+  const button = form.querySelector('button[type="submit"]');
+  let lastSubmitAt = 0;
+  function showMessage(text, ok){
+    message.textContent = text;
+    message.style.display = 'block';
+    message.style.color = ok ? '#d7f5dd' : '#ffd7d7';
+  }
+  function clearMessage(){
+    message.textContent = '';
+    message.style.display = 'none';
+  }
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    clearMessage();
+    const now = Date.now();
+    if (now - lastSubmitAt < 8000) {
+      showMessage('Please wait a few seconds before sending again.', false);
+      return;
+    }
+    const fd = new FormData(form);
+    const name = (fd.get('name') || '').toString().trim();
+    const phone = (fd.get('phone') || '').toString().trim();
+    const email = (fd.get('email') || '').toString().trim();
+    const service = (fd.get('service') || '').toString().trim();
+    if (!name || !phone || !service) {
+      showMessage('Please complete name, phone, and service.', false);
+      return;
+    }
+    if (email) {
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        showMessage('Please enter a valid email address.', false);
+        return;
+      }
+    }
+    lastSubmitAt = now;
+    button.disabled = true;
+    const original = button.textContent;
+    button.textContent = 'Sending...';
+    try {
+      const res = await fetch('/api/estimate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, service, source: 'Quick Pro Painters Website' })
+      });
+      if (!res.ok) throw new Error('submit_failed');
+      form.reset();
+      showMessage('Thank you! We received your request. Quick Pro Painters will contact you soon.', true);
+    } catch (err) {
+      showMessage('Something went wrong. Please try again.', false);
+    } finally {
+      button.disabled = false;
+      button.textContent = original;
+    }
+  });
+})();
+</script>
+</body>
+</html>
