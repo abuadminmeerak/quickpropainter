@@ -409,13 +409,14 @@ textarea {
   border-radius: 16px;
   padding: 14px 16px;
   background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  color: #111;
   font: inherit;
 }
 
 input::placeholder,
+select::placeholder,
 textarea::placeholder {
-  color: rgba(255, 255, 255, 0.46);
+  color: #777;
 }
 
 .full-span {

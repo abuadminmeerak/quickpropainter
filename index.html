@@ -444,13 +444,14 @@ textarea {
   border-radius: 16px;
   padding: 14px 16px;
   background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  color: #111;
   font: inherit;
 }
 
-input::our work,
-textarea::our work {
-  color: rgba(255, 255, 255, 0.46);
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: #777;
 }
 
 .full-span {
@@ -619,7 +620,7 @@ textarea::our work {
 
 .intro-grid { align-items: end; }
 .intro-grid > div:first-child { max-width: 520px; }
-.service-feature-content { padding: 22px 0 0; }
+.service-feature-content { padding: 16px 18px; }
 .service-feature-content h3 { font-size: 1.45rem; margin-bottom: 0; color: #fff; }
 .service-feature-content p, .service-feature-content span { display:none; }
 .services-grid { gap: 28px; }
@@ -732,12 +733,14 @@ textarea::our work {
               </div>
             </section>
 
-            <section class="info-block" id="services">
+            <section class="info-block services-block" id="services">
+              <h2>Services</h2>
               <a class="service-feature single-service-feature" href="service-power-washing.html">
                 <img
                   src="https://api.agenticdeploy.ai/storage/v1/object/public/agent-media/846d94c2-4e60-4faa-b935-4b03a863fcbd/2026-08/88f0ae3c-f7af-4827-a4ae-4524fef50660-polished-professional-residential-power-washing.png"
                   alt="Residential pressure washing on siding and driveway"
                 />
+                <div class="service-feature-content"><h3>Pressure Washing</h3></div>
               </a>
             </section>
 
