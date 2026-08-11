@@ -291,6 +291,9 @@ p {
   border-color: var(--accent);
 }
 
+.site-header .btn-outline { background: #fff; color: var(--accent); border-color: var(--accent); }
+.site-header .btn-outline:hover { background: #fff; color: var(--accent-dark); border-color: var(--accent-dark); }
+
 .section {
   padding: 96px 0;
 }
@@ -650,7 +653,10 @@ textarea::placeholder {
 .compact-form input, .compact-form select { min-height: 48px; border-radius: 14px; border:1px solid rgba(19,38,60,0.14); padding: 0 14px; font: inherit; }
 .sidebar-box h3 { margin-bottom: 8px; font-size: 1.45rem; color: var(--text); }
 .book-box p { margin-bottom: 18px; }
-.sidebar-book-btn { width:100%; }
+.sidebar-book-btn { width:100%; background: var(--accent); border-color: var(--accent); color:#fff; animation: cta-pulse 2.6s ease-in-out infinite; }
+.sidebar-book-btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); color:#fff; }
+@keyframes cta-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(210,138,31,0.5); } 50% { box-shadow: 0 0 0 12px rgba(210,138,31,0); } }
+@media (prefers-reduced-motion: reduce) { .sidebar-book-btn { animation: none; } }
 .gallery-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
 .gallery-grid img { aspect-ratio: 1 / 0.78; border-radius: var(--radius); box-shadow: var(--shadow); }
 .faq-list { display:grid; gap: 14px; margin-top: 26px; }
@@ -694,7 +700,7 @@ textarea::placeholder {
           <a href="gallery.html">Gallery</a>
           <a href="#estimate">Free Estimate</a>
         </nav>
-        <a class="btn btn-outline" href="#estimate">Get Free Estimate</a>
+        <a class="btn btn-outline" href="https://cal.com/meerakappdemo/quick-pro-painters-schedule-an-appointment">Book Now</a>
       </div>
     </header>
 
@@ -785,7 +791,7 @@ textarea::placeholder {
               <div class="section-tag">Book Now</div>
               <h3>Ready to Schedule?</h3>
               <p>Choose a time that works for you.</p>
-              <a class="btn btn-outline sidebar-book-btn" href="#">Book Now</a>
+              <a class="btn btn-outline sidebar-book-btn" href="https://cal.com/meerakappdemo/quick-pro-painters-schedule-an-appointment">Book Now</a>
             </div>
           </aside>
         </div>
@@ -800,7 +806,7 @@ textarea::placeholder {
           </div>
           <div class="final-cta-actions">
             <a class="btn btn-primary" href="#estimate">Get a Free Estimate</a>
-            <a class="btn btn-outline final-outline" href="#">Book Now</a>
+            <a class="btn btn-outline final-outline" href="https://cal.com/meerakappdemo/quick-pro-painters-schedule-an-appointment">Book Now</a>
           </div>
         </div>
       </section>
@@ -816,7 +822,7 @@ textarea::placeholder {
           <a href="service-power-washing.html">Pressure Washing</a>
         </div>
         <div>
-          <h4>Contact</h4>
+          <h4><a href="#estimate">Contact</a></h4>
           <p>Phone: 512-792-8287</p>
           
           <p>Service Area: Austin &amp; Surrounding Areas</p>
@@ -827,7 +833,7 @@ textarea::placeholder {
           <a href="#services">Services</a>
           <a href="gallery.html">Gallery</a>
           <a href="#estimate">Free Estimate</a>
-          <a href="#">Book Now</a>
+          <a href="https://cal.com/meerakappdemo/quick-pro-painters-schedule-an-appointment">Book Now</a>
         </div>
       </div>
       <div class="footer-bottom-bar">
